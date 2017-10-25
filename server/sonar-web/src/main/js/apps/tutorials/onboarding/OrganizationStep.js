@@ -19,12 +19,12 @@
  */
 // @flow
 import React from 'react';
-import Select from 'react-select';
 import classNames from 'classnames';
 import { sortBy } from 'lodash';
 import Step from './Step';
 import NewOrganizationForm from './NewOrganizationForm';
 import { getMyOrganizations } from '../../../api/organizations';
+import Select from '../../../components/controls/Select';
 import { translate } from '../../../helpers/l10n';
 
 /*::
@@ -174,6 +174,7 @@ export default class OrganizationStep extends React.PureComponent {
           <Select
             className="input-super-large"
             clearable={false}
+            data-test="existing"
             onChange={this.handleExistingOrganizationSelect}
             options={this.state.existingOrganizations.map(organization => ({
               label: organization,
